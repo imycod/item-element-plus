@@ -377,4 +377,6 @@
 	</div>
 </template>
 
-<style setup lang="ts"></style>
+<script setup lang="ts">
+import { ElButton, ElButtonGroup, ElCol, ElIcon, ElRow } from 'element-plus'
+</script>

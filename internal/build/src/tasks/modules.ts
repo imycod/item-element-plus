@@ -16,13 +16,15 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
 import glob from 'fast-glob'
+import postcss from 'rollup-plugin-postcss'
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
 import { epRoot, excludeFiles, pkgRoot } from '@item-ui/build-utils'
 import { generateExternal, writeBundles } from '../utils'
 import { ItemUiAlias } from '../plugins/item-ui-alias'
 import { buildConfigEntries, target } from '../build-info'
 
 import type { OutputOptions } from 'rollup'
-
 export const buildModules = async () => {
   const input = excludeFiles(
     await glob('**/*.{js,ts,vue}', {
@@ -51,8 +53,16 @@ export const buildModules = async () => {
           vueJsx: vueJsx(),
         },
       }),
+      postcss({
+        extract: true,
+        plugins: [tailwindcss(), autoprefixer()],
+      }),
       Components({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver({
+            importStyle: false,
+          }),
+        ],
       }),
       nodeResolve({
         extensions: ['.mjs', '.js', '.json', '.ts'],

@@ -15,6 +15,7 @@ import {
   getPackageDependencies,
   pkgRoot,
   projRoot,
+  epOutput,
 } from '@item-ui/build-utils'
 import type { Plugin } from 'vite'
 // import './vite.init'
@@ -50,6 +51,10 @@ export default defineConfig(async ({ mode }) => {
     resolve: {
       alias: [
         {
+          find: '@unisc-ui/item',
+          replacement: path.resolve(epOutput),
+        },
+        {
           find: /^item-ui(\/(es|lib))?$/,
           replacement: path.resolve(epRoot, 'index.ts'),
         },
@@ -76,11 +81,11 @@ export default defineConfig(async ({ mode }) => {
         },
       }),
       esbuildPlugin(),
-      Components({
-        include: `${__dirname}/**`,
-        resolvers: ItemUiResolver({ importStyle: false }),
-        dts: false,
-      }),
+      // Components({
+      //   include: `${__dirname}/**`,
+      //   resolvers: ItemUiResolver({ importStyle: false }),
+      //   dts: false,
+      // }),
       mkcert(),
       Inspect(),
     ],

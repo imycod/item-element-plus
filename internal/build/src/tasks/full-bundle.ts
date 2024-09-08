@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import path from 'path'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { rollup } from 'rollup'
@@ -13,6 +12,9 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { parallel } from 'gulp'
 import glob from 'fast-glob'
 import { camelCase, upperFirst } from 'lodash-unified'
+import postcss from 'rollup-plugin-postcss'
+import tailwindcss from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
 import {
   PKG_BRAND_NAME,
   PKG_CAMELCASE_LOCAL_NAME,
@@ -52,11 +54,19 @@ async function buildFullEntry(minify: boolean) {
         vueJsx: vueJsx(),
       },
     }),
+    postcss({
+      extract: true,
+      plugins: [tailwindcss(), autoprefixer()],
+    }),
     nodeResolve({
       extensions: ['.mjs', '.js', '.json', '.ts'],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: false,
+        }),
+      ],
     }),
     commonjs(),
     esbuild({
