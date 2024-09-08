@@ -1,0 +1,5 @@
+export const PKG_PREFIX = '@item-ui'
+export const PKG_NAME = 'item-ui'
+export const PKG_CAMELCASE_NAME = 'ItemUi'
+export const PKG_CAMELCASE_LOCAL_NAME = 'ItemUiLocale'
+export const PKG_BRAND_NAME = 'Item Ui'
