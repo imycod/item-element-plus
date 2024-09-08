@@ -1,0 +1,177 @@
+/* date picker
+*/
+.el-date-picker,
+.el-date-range-picker {
+  --el-datepicker-text-color: var(--text-primary);
+  --el-datepicker-off-text-color: var(--text-tertiary);
+  --el-datepicker-header-text-color: var(--text-secondary);
+  --el-datepicker-icon-color: var(--text-primary);
+  --el-datepicker-border-color: var(--border-disabled);
+  --el-datepicker-inner-border-color: var(--border-primary);
+  --el-datepicker-inrange-bg-color: var(--bg-brand-tertiary);
+  --el-datepicker-inrange-hover-bg-color: var(--bg-brand-tertiary-hover);
+  --el-datepicker-sidebar-width: 160px;
+}
+.el-date-picker {
+  width: 376px;
+  &__header {
+    margin: 16px;
+    &-label {
+      //   @apply text-body-strong;
+      padding: 0 2px;
+      color: var(--text-primary);
+    }
+  }
+  &__time-header {
+    padding: 0 16px 16px 16px;
+    border-bottom: 0;
+  }
+  &__editor-wrap:first-child {
+    text-align: right;
+  }
+  .el-picker-panel__content {
+    margin: 0 16px 16px 16px;
+    width: auto;
+  }
+  .el-input--small {
+    @apply w-24 text-tiny;
+    --input-size-small: 24px;
+    .el-input__wrapper {
+      @apply rounded;
+    }
+  }
+  &.has-time {
+    .el-picker-panel__body {
+      position: relative;
+      padding-bottom: 48px;
+    }
+    .el-date-picker__time-header {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  &.has-sidebar {
+    width: calc(376px + var(--el-datepicker-sidebar-width));
+  }
+}
+
+.el-date-table {
+  th {
+    @apply text-sm;
+    padding: 0 0 8px 0;
+    border: 0;
+  }
+  td {
+    @apply w-9 h-9 p-0;
+    .el-date-table-cell {
+      @apply h-9 p-0;
+      .el-date-table-cell__text {
+        @apply w-9 h-9 flex items-center justify-center text-sm;
+      }
+    }
+    &.start-date {
+      .el-date-table-cell {
+        @apply ml-0 rounded-l-[24px];
+      }
+    }
+    &.end-date {
+      .el-date-table-cell {
+        @apply mr-0 rounded-r-[24px];
+      }
+    }
+  }
+}
+
+.el-picker-panel {
+  color: var(--text-primary);
+  &__footer {
+    padding: 16px;
+    background-color: transparent;
+  }
+  &__sidebar {
+    padding-top: 8px;
+    width: var(--el-datepicker-sidebar-width);
+    background-color: transparent;
+    & + .el-picker-panel__body {
+      margin-left: var(--el-datepicker-sidebar-width);
+    }
+  }
+  &__shortcut {
+    @apply pl-6 py-3 text-sm;
+  }
+  &__icon-btn {
+    margin-top: 0;
+    color: var(--text-brand);
+  }
+}
+
+/* range */
+.el-date-range-picker {
+  width: 620px;
+  &__header {
+    margin: 0 0 16px 0;
+  }
+  &__content {
+    @apply p-5;
+    &.is-left {
+      border-right: 0;
+    }
+  }
+  &__time-header {
+    @apply flex items-center justify-center;
+    padding: 0 16px 16px 16px;
+    border-bottom: 0;
+    & > span {
+      @apply flex;
+    }
+  }
+  &__editors-wrap {
+    @apply flex items-center justify-end;
+    &.is-right {
+      @apply justify-start;
+    }
+  }
+  &__time-picker-wrap {
+    @apply flex px-1;
+  }
+  .el-picker-panel__body {
+    min-width: 620px;
+  }
+  .el-input--small {
+    @apply w-24 text-tiny;
+    --input-size-small: 24px;
+    .el-input__wrapper {
+      @apply rounded;
+    }
+  }
+  &.has-time {
+    .el-picker-panel__body {
+      position: relative;
+      padding-bottom: 48px;
+    }
+    .el-date-range-picker__time-header {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  &.has-sidebar {
+    width: calc(620px + var(--el-datepicker-sidebar-width));
+  }
+}
+
+/* editor */
+.el-date-editor {
+  &.el-input__wrapper {
+    --el-component-size: 36px;
+    --el-input-height: 36px;
+  }
+  .el-range__icon {
+    color: var(--text-secondary);
+  }
+  .el-range-input {
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+}

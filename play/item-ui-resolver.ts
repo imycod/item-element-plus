@@ -16,10 +16,11 @@ export const ItemUiResolver = (userOptions = {}) => {
         return {
           importName: name,
           path: '@item-ui/components',
-          sideEffects:
-            userOptions.importStyle === 'sass'
+          sideEffects: userOptions.importStyle
+            ? userOptions.importStyle === 'sass'
               ? `@item-ui/components/${pathName}/style/index.ts`
-              : `@item-ui/components/${pathName}/style/css.ts`,
+              : `@item-ui/components/${pathName}/style/css.ts`
+            : '',
         }
       }
     },

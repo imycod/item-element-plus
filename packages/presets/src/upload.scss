@@ -1,0 +1,65 @@
+/* upload
+*/
+
+.el-upload {
+    &-dragger {
+        @apply p-8 rounded-lg;
+        background-color: var(--bg-secondary);
+        border-color: var(--border-primary);
+        .el-icon--upload {
+            margin-bottom: 16px;
+            font-size: 28px;
+            line-height: 1;
+            color: var(--text-brand);
+        }
+        .el-upload__text {
+            @apply text-tiny;
+            color: var(--text-primary);
+        }
+
+        .el-upload__tip {
+            @apply text-tiny;
+            margin-top: 4px;
+            color: var(--text-secondary);
+        }
+    }
+    &--picture-card {
+        @apply rounded-lg;
+        background-color: var(--bg-primary);
+        border-color: var(--border-primary);
+    
+        .el-icon {
+            font-size: 32px;
+            color: var(--text-secondary);
+        }
+    }
+}
+
+.el-upload-list {
+    &--text {
+        @apply relative rounded-lg mt-4 overflow-hidden;
+
+        &::before {
+            @apply absolute -z-0 top-0 left-0 right-0 bottom-0 rounded-lg;
+            content: '';
+            border: 1px solid var(--border-primary);
+        }
+
+        .el-upload-list__item {
+            @apply my-4 px-4;
+
+            .el-progress {
+                @apply relative top-0 mt-2;
+            }
+
+            .el-button {
+                @apply p-0 w-9 h-9;
+            }
+
+            &:hover {
+                @apply bg-transparent;
+            }
+        }
+    }
+}
+

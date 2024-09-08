@@ -1,0 +1,105 @@
+/* tag
+*/
+.el-tag {
+  @apply px-[7px] py-[3px] h-auto rounded-lg text-sm;
+  .el-tag__content {
+    @apply flex items-center gap-1;
+    .el-icon {
+      @apply rounded-none cursor-default text-base w-4 h-4;
+    }
+  }
+  .el-tag__close {
+    @apply ml-1;
+  }
+  &.el-tag--small {
+    @apply text-tiny;
+  }
+  &.el-tag--primary {
+    &.el-tag--plain {
+      --el-tag-bg-color: var(--white);
+      --el-tag-border-color: var(--stroke-border-cta-rest);
+      --el-tag-hover-color: var(--text-primary);
+      --el-tag-text-color: var(--text-primary);
+    }
+  }
+  &.el-tag--info {
+    @apply px-2 py-1 border-0;
+    --el-tag-bg-color: var(--surface-tonal-rest);
+    --el-tag-hover-color: var(--text-cta-tonal);
+    --el-tag-text-color: var(--text-cta-tonal);
+  }
+}
+
+.el-check-tag {
+  @apply inline-flex items-center gap-1 rounded-lg px-2 py-1 text-sm;
+  .el-icon {
+    &.el-tag__close {
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 12px;
+      width: 14px;
+      height: 14px;
+      &:hover {
+        background-color: var(--el-tag-close-hover-color);
+      }
+    }
+  }
+  &.is-info {
+    background-color: var(--surface-tonal-rest);
+    color: var(--text-cta-tonal);
+    &:hover {
+      background-color: var(--surface-tonal-hover);
+    }
+    &:active {
+      background-color: var(--surface-tonal-pressed);
+    }
+    .el-icon {
+      &.el-tag__close {
+        &:hover {
+          background-color: var(--text-cta-tonal);
+          color: var(--white);
+        }
+      }
+    }
+  }
+  &.is-plain {
+    padding: 3px 7px;
+    background-color: var(--white);
+    border: 1px solid var(--stroke-border-cta-rest);
+    color: var(--text-primary);
+    &:hover {
+      background-color: var(--surface-tonal-hover);
+      border: 1px solid var(--stroke-border-cta-hover);
+      color: var(--text-cta-hover);
+    }
+    &:active {
+      background-color: var(--surface-tonal-pressed);
+      border: 1px solid var(--stroke-border-cta-pressed);
+      color: var(--text-cta-pressed);
+    }
+    .el-icon {
+      &.el-tag__close {
+        &:hover {
+          background-color: var(--text-primary);
+          color: var(--white);
+        }
+      }
+    }
+  }
+  &.is-round {
+    @apply rounded-full;
+  }
+}
+
+/* tags in the select */
+// 在element-plus 2.4.4 下有效，2.7.*下会失效，因为组件库内部结果改变了
+.el-select__tags,
+.el-select__collapse-tags {
+  .el-tag {
+    &.el-tag--primary {
+      &.el-tag--plain {
+        border-color: var(--stroke-border-cta-rest);
+      }
+    }
+  }
+}

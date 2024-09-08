@@ -1,0 +1,79 @@
+/* slider
+*/
+.el-popper.slider-tip {
+    @apply text-tiny bg-transparent border-none;
+    color: var(--text-primary);
+    padding: 7px 4px 4px 4px;
+    min-width: 28px;
+    text-align: center;
+    .el-popper__arrow {
+        @apply hidden;
+    }
+    &:after {
+        @apply shadow-md rounded-full rounded-bl-none -rotate-45;
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding-top: 100%;
+        background-color: var(--bg-secondary);
+    }
+}
+
+.el-slider {
+    --el-slider-border-radius: 4px;
+    --el-slider-height: 4px;
+    --el-slider-disabled-color: var(--bg-disabled);
+    .el-slider__runway {
+        background-color: var(--bg-primary);
+        &.is-disabled {
+            .el-slider__button {
+                &:before,
+                &:after {
+                    @apply scale-100;
+                    background-color: var(--bg-disabled);
+                }
+            }
+        }
+    }
+}
+.el-slider__button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 0;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--bg-brand-primary);
+        border-radius: 50%;
+    }
+    &:before {
+        transition: var(--el-transition-duration-fast);
+        opacity: 0.5;
+    }
+    &:after {
+        @apply shadow-md;
+    }
+    &:active:after {
+        background-color: var(--bg-secondary);
+    }
+    &.dragging,
+    &.hover,
+    &:hover {
+        @apply scale-100;
+        background-color: var(--bg-brand-secondary-hover);
+        &:before {
+            @apply scale-[2];
+            background-color: var(--bg-brand-secondary-hover);
+        }
+    }
+}

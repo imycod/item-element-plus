@@ -8,6 +8,8 @@
  */
 import { createApp } from 'vue'
 // import '@item-ui/theme-chalk/src/dark/css-vars.scss'
+import 'item-ui/es/presets/dist/index.css'
+import ElementPlus from 'element-plus'
 ;(async () => {
   const apps = import.meta.glob('./src/*.vue')
   const name = location.pathname.replace(/^\//, '') || 'App'
@@ -18,6 +20,6 @@ import { createApp } from 'vue'
   }
   const App = (await file()).default
   const app = createApp(App)
-
+  app.use(ElementPlus)
   app.mount('#play')
 })()

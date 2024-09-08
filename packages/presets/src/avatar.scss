@@ -1,0 +1,64 @@
+/* avatar
+*/
+.el-avatar {
+    --el-avatar-size: 30px;
+    font-size: 22px;
+    font-weight: 500;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    &.is-themed {
+        background-color: var(--bg-brand-tertiary);
+    }
+    & + .el-badge__content {
+        &:not(.is-dot) {
+            transform: translateY(-50%) translateX(100%) scale(0.8);
+        }
+    }
+    &:not(.el-avatar--square) + .el-badge__content {
+        &:not(.is-dot) {
+            transform: translateY(-20%) translateX(70%) scale(0.8);
+        }
+    }
+}
+.el-avatar--small {
+    --el-avatar-size: 24px;
+    font-size: 16px;
+    & + .el-badge__content {
+        &:not(.is-dot) {
+            transform: translateY(-50%) translateX(100%) scale(0.7);
+        }
+    }
+    &:not(.el-avatar--square) + .el-badge__content {
+        &:not(.is-dot) {
+            transform: translateY(-30%) translateX(80%) scale(0.7);
+        }
+    }
+}
+.el-avatar--large {
+    --el-avatar-size: 42px;
+    font-size: 34px;
+    & + .el-badge__content {
+        &:not(.is-dot) {
+            transform: translateY(-50%) translateX(100%) scale(1);
+        }
+    }
+    &:not(.el-avatar--square) + .el-badge__content {
+        &:not(.is-dot) {
+            transform: translateY(-10%) translateX(60%) scale(1);
+        }
+    }
+}
+.el-avatar--xlarge {
+    --el-avatar-size: 60px;
+    font-size: 48px;
+    & + .el-badge__content {
+        &:not(.is-dot) {
+            transform: translateY(-50%) translateX(100%) scale(1);
+        }
+    }
+    &:not(.el-avatar--square) + .el-badge__content {
+        &:not(.is-dot) {
+            transform: translateY(0%) translateX(50%);
+        }
+    }
+}

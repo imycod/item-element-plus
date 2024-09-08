@@ -7,9 +7,17 @@
     "clean": "rimraf dist",
     "build": "gulp --require @esbuild-kit/cjs-loader"
   },
+  "peerDependencies": {
+    "element-plus": "^2.8.2"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "cssnano": "^6.0.5",
+    "gulp-postcss": "^10.0.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.10"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.9"
   }
 }

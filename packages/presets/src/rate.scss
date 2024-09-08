@@ -1,0 +1,13 @@
+/* rate
+*/
+.el-rate {
+  --el-rate-icon-margin: 0;
+  --el-rate-void-color: var(--bg-tertiary);
+  --el-rate-fill-color: var(--yellow-500);
+  --el-rate-disabled-void-color: var(--bg-tertiary);
+  --el-rate-text-color: var(--text-primary);
+  height: 36px;
+  &__text {
+    @apply ml-2 text-sm;
+  }
+}

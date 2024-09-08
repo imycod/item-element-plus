@@ -1,0 +1,40 @@
+/* carousel
+*/
+.el-carousel {
+    --el-carousel-arrow-font-size: 16px;
+    --el-carousel-arrow-size: 36px;
+    --el-carousel-indicator-width: 30px;
+    --el-carousel-indicator-height: 2px;
+    --el-carousel-indicator-padding-horizontal: 4px;
+    --el-carousel-indicator-padding-vertical: 12px;
+    --el-carousel-indicator-out-color: var(--border-tertiary);
+
+    &__arrow {
+        @apply bg-[var(--bg-tertiary)] text-[var(--text-primary)] opacity-60;
+
+        &:hover {
+            @apply bg-[var(--bg-tertiary)] text-[var(--text-primary)] opacity-95;
+        }
+    }
+
+    &__button {
+        @apply rounded opacity-60;
+        background-color: var(--el-carousel-indicator-out-color);
+
+        &:hover {
+            @apply opacity-80;
+        }
+    }
+
+    &__indicator {
+        &.is-active {
+            button {
+                background-color: var(--bg-brand-primary);
+            }
+        }
+    }
+
+    &__mask {
+        background-color: var(--bg-brand-tertiary);
+    }
+}

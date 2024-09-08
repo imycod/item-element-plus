@@ -1,0 +1,84 @@
+/* stepper / input number 
+*/
+.el-input-number {
+    --input-num-size-large: 48px;
+    --input-num-size-medium: 36px;
+    --input-num-size-small: 24px;
+    @apply w-32;
+    .el-input-number__decrease,
+    .el-input-number__increase {
+        top: 0;
+        bottom: 0;
+        width: var(--input-num-size-medium);
+        border-radius: 8px;
+        border: 0;
+    }
+    .el-input-number__decrease:hover~.el-input:not(.is-disabled), 
+    .el-input-number__increase:hover~.el-input:not(.is-disabled) {
+        .el-input__wrapper {
+            box-shadow: none;
+        }
+    }
+    .el-icon {
+        font-size: 16px;
+    }
+    .el-input {
+        --input-size-large: var(--input-num-size-large);
+        --input-size-medium: var(--input-num-size-medium);
+        --input-size-small: var(--input-num-size-small);
+        .el-input__wrapper {
+            box-shadow: none;
+        }
+    }
+    &.is-filled {
+        .el-input-number__decrease,
+        .el-input-number__increase {
+            background-color: var(--bg-brand-primary);
+            color: var(--text-on-brand);
+            &:not(.is-disabled):hover {
+                background-color: var(--bg-brand-primary-hover);
+            }
+            &:not(.is-disabled):active {
+                background-color: var(--bg-brand-primary-hover);
+            }
+            &.is-disabled {
+                background-color: var(--bg-disabled);
+                color: var(--text-disabled);
+            }
+        }
+    }
+    &.is-outlined {
+        .el-input-number__decrease,
+        .el-input-number__increase {
+            background-color: transparent;
+            border: 1px solid var(--border-primary);
+            color: var(--text-primary);
+            &:not(.is-disabled):hover {
+                background-color: var(--bg-primary-hover);
+            }
+            &:not(.is-disabled):active {
+                background-color: var(--bg-primary-hover);
+            }
+            &.is-disabled {
+                border-color: var(--border-disabled);
+                color: var(--text-disabled);
+            }
+        }
+    }
+    &.el-input-number--large {
+        @apply w-40;
+        .el-input-number__decrease,
+        .el-input-number__increase {
+            width: var(--input-num-size-large);
+            height: var(--input-num-size-large);
+        }
+    }
+    &.el-input-number--small {
+        @apply w-28;
+        .el-input-number__decrease,
+        .el-input-number__increase {
+            width: var(--input-num-size-small);
+            height: var(--input-num-size-small);
+        }
+    }
+}

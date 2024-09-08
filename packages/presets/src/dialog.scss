@@ -1,0 +1,23 @@
+/* dialog
+*/
+.el-dialog {
+  --el-dialog-bg-color: var(--bg-primary);
+  --el-dialog-box-shadow: var(--elevation-1);
+  --el-dialog-padding-primary: 24px;
+  --el-dialog-border-radius: 8px;
+}
+.el-dialog__header {
+  @apply relative border-b border-solid border-[var(--border-primary)];
+  margin: 0;
+  padding: var(--el-dialog-padding-primary);
+}
+.el-dialog__title {
+  // @apply text-subheading;
+  color: var(--text-primary);
+}
+.el-dialog__body {
+  padding: var(--el-dialog-padding-primary);
+}
+.el-dialog__footer {
+  padding-top: 8px;
+}

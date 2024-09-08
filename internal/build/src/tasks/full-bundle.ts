@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import path from 'path'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { rollup } from 'rollup'
@@ -7,6 +8,8 @@ import vue from '@vitejs/plugin-vue'
 import VueMacros from 'unplugin-vue-macros/rollup'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import esbuild, { minify as minifyPlugin } from 'rollup-plugin-esbuild'
+import Components from 'unplugin-vue-components/rollup'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { parallel } from 'gulp'
 import glob from 'fast-glob'
 import { camelCase, upperFirst } from 'lodash-unified'
@@ -51,6 +54,9 @@ async function buildFullEntry(minify: boolean) {
     }),
     nodeResolve({
       extensions: ['.mjs', '.js', '.json', '.ts'],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
     }),
     commonjs(),
     esbuild({

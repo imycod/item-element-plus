@@ -1,0 +1,91 @@
+/* information box
+*/
+.el-alert {
+    --el-alert-padding: 16px;
+    --el-alert-border-radius-base: 8px;
+    --el-alert-close-font-size: 20px;
+    --el-alert-icon-size: 16px;
+    --el-alert-icon-large-size: 24px;
+    @apply border border-solid items-start;
+    & &__description {
+        @apply text-body mt-1.5;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    & &__close-btn {
+        top: 12px;
+        right: 12px;
+    }
+    & &__content {
+        @apply px-0 w-full;
+    }
+    & &__icon {
+        @apply mr-2;
+    }
+    & &__title {
+        @apply text-subheading leading-6 align-baseline;
+        color: var(--text-primary);
+        &.is-bold {
+            font-weight: 500;
+        }
+    }
+    &.is-light {
+        .el-alert__description {
+            color: var(--text-primary);
+        }
+        .el-alert__close-btn {
+            color: var(--text-secondary);
+        }
+    }
+    &--theme.is-light {
+        background-color: var(--bg-brand-tertiary);
+        border-color: var(--border-brand-tertiary);
+        .el-alert__icon {
+            color: var(--text-brand);
+        }
+    }
+    &--success.is-light {
+        background-color: var(--bg-positive-tertiary);
+        border-color: var(--border-positive-tertiary);
+        .el-alert__icon {
+            color: var(--text-positive);
+        }
+    }
+    &--info.is-light {
+        background-color: var(--bg-primary);
+        border-color: var(--border-primary);
+        &.is-light {
+            color: var(--text-secondary);
+        }
+        .el-alert__icon {
+            color: var(--text-primary);
+        }
+    }
+    &--warning.is-light {
+        background-color: var(--bg-warning-tertiary);
+        border-color: var(--border-warning-tertiary);
+        .el-alert__icon {
+            color: var(--text-warning);
+        }
+    }
+    &--error.is-light {
+        background-color: var(--bg-danger-tertiary);
+        border-color: var(--border-danger-tertiary);
+        .el-alert__icon {
+            color: var(--text-danger);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .el-alert {
+        --el-alert-padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .el-alert {
+        --el-alert-padding: 24px;
+    }
+}

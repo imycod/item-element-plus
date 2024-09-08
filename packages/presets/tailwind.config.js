@@ -4,7 +4,7 @@ const colors = require('tailwindcss/colors')
 const tailwind_classes = require('./tailwind-base.json')
 
 export default {
-	content: ['./public/index.html', './src/**/*.{js,ts,vue}'],
+	content: ['./src/**/*.{js,ts,jsx,tsx,scss}'],
 	theme: {
 		extend: {
 			colors: {
@@ -15,6 +15,7 @@ export default {
 			fontFamily: {
 				sans: ['HelveticaNow'],
 			},
+
 		},
 	},
 	darkMode: 'class',

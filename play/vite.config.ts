@@ -78,7 +78,7 @@ export default defineConfig(async ({ mode }) => {
       esbuildPlugin(),
       Components({
         include: `${__dirname}/**`,
-        resolvers: ItemUiResolver({ importStyle: 'sass' }),
+        resolvers: ItemUiResolver({ importStyle: false }),
         dts: false,
       }),
       mkcert(),

@@ -1,0 +1,39 @@
+/* element-plus css */
+// @use 'element-plus/theme-chalk/dark/css-vars.css' as *;
+@use 'element-plus/theme-chalk/src/index.scss' as *;
+
+/* tailwind css */
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+/* material-icons */
+// @import 'material-icons/iconfont/material-icons.css';
+// .el-icon {
+// 	.material-icons,
+//     .material-icons-outlined {
+//         font-size: inherit;
+//     }
+// }
+/* 可根据项目需要，只引入所需的类型图标，减小体积 */
+/* @import 'material-icons/iconfont/filled.css';
+@import 'material-icons/iconfont/outlined.css';
+@import 'material-icons/iconfont/round.css';
+@import 'material-icons/iconfont/sharp.css';
+@import 'material-icons/iconfont/two-tone.css'; */
+
+/* fontawesome free icon，包含了所有的。 目前不需要用到fontawesome，上面的material-icons已经可以够用。 */
+// @import '@fortawesome/fontawesome-free/css/all.min.css';
+/* 可根据项目需要，只引入所需类型的图标，减小体积 */
+/* @import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+@import '@fortawesome/fontawesome-free/css/regular.min.css';
+@import '@fortawesome/fontawesome-free/css/brand.min.css';
+@import '@fortawesome/fontawesome-free/css/solid.min.css'; */
+
+/* prismjs */
+// @import 'prismjs/themes/prism-okaidia.min.css';
+// pre[class*='language-'] {
+//   border-radius: 0.5rem;
+//   padding-top: 0;
+//   padding-bottom: 0;
+// }

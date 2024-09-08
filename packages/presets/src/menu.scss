@@ -1,0 +1,102 @@
+/* menu
+*/
+.el-menu {
+  --el-menu-active-color: var(--el-color-primary);
+  --el-menu-text-color: var(--text-primary);
+  --el-menu-hover-text-color: var(--el-color-primary);
+  --el-menu-bg-color: transparent;
+  --el-menu-hover-bg-color: var(--bg-primary-hover);
+  --el-menu-item-height: 48px;
+  --el-menu-sub-item-height: var(--el-menu-item-height);
+  --el-menu-item-font-size: 14px;
+  --el-menu-item-hover-fill: var(--bg-primary-hover);
+  --el-menu-base-level-padding: 0.75rem;
+  --el-menu-level-padding: 1rem;
+  --el-menu-icon-width: 20px;
+  @apply bg-transparent border-r-0;
+  &-item {
+    @apply rounded-xl py-2 px-3 h-auto text-sm;
+    min-height: var(--el-menu-item-height);
+    &.is-active {
+      background-color: var(--bg-tertiary);
+    }
+    & > a {
+      @apply flex-auto;
+    }
+  }
+  &--popup {
+    @apply rounded-lg p-1;
+  }
+  &--collapse {
+    .el-sub-menu {
+      &.is-active {
+        & > .el-sub-menu__title {
+          background-color: var(--bg-primary);
+          color: var(--el-menu-hover-text-color);
+        }
+      }
+    }
+  }
+}
+.el-sub-menu {
+  &__title {
+    @apply rounded-xl py-2 px-3 h-auto text-sm;
+    min-height: var(--el-menu-item-height);
+  }
+  .el-menu-item,
+  .el-sub-menu,
+  .nest-menu {
+    @apply relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      left: calc(
+        var(--el-menu-base-level-padding) + var(--el-menu-level) *
+          var(--el-menu-level-padding) - 16px
+      );
+    }
+    &::before {
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--border-primary);
+    }
+    &::after {
+      top: 50%;
+      width: 12px;
+      height: 2px;
+      background-color: var(--border-primary);
+      transform: translateY(-50%);
+    }
+    &.is-active {
+      background-color: transparent;
+    }
+    &:last-child::before {
+      height: 50%;
+    }
+  }
+  &.is-opened {
+    & > .el-sub-menu__title {
+      background-color: var(--bg-primary);
+    }
+    &.is-active > .el-sub-menu__title {
+      background-color: var(--bg-tertiary);
+    }
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+  .el-popper,
+  .nest-menu {
+    .el-menu-item,
+    .el-sub-menu {
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

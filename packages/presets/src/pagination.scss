@@ -1,0 +1,102 @@
+/* pagination
+*/
+.el-pagination {
+    @apply px-6 py-2;
+    border-top: 1px solid var(--stroke-border-neutral-rest);
+    .el-pagination__total {
+        &.is-first {
+            @apply flex-auto ml-0 text-tiny;
+            color: var(--text-secondary);
+        }
+    }
+    .el-pagination__label {
+        @apply text-tiny;
+    }
+    .el-pagination__sizes {
+        @apply flex items-center;
+        .el-select {
+            @apply ml-2;
+            .el-input {
+                @apply w-20;
+            }
+        }
+    }
+    .el-pager {
+        li {
+            @apply rounded-lg bg-transparent text-tiny;
+            color: var(--text-primary);
+            &.is-active {
+                background-color: var(--surface-tonal-rest);
+                color: var(--text-cta-tonal);
+            }
+        }
+    }
+    button {
+        @apply bg-transparent;
+        &:disabled {
+            @apply bg-transparent;
+            color: var(--text-cta-disabled);
+        }
+    }
+    .btn-prev {
+        @apply ml-5;
+    }
+    .more {
+        color: var(--text-tertiary);
+    }
+    &.is-mini {
+        @apply px-4 py-3 rounded-b-lg;
+        .btn-prev,
+        .btn-next {
+            --el-button-border-color: var(--stroke-border-cta-rest);
+            --el-button-bg-color: transparent;
+            --el-button-text-color: var(--text-primary);
+            --el-button-divide-border-color: var(--stroke-border-cta-rest);
+            --el-button-hover-bg-color: transparent;
+            --el-button-hover-border-color: var(--stroke-border-cta-hover);
+            --el-button-hover-text-color: var(--text-cta-hover);
+            --el-button-hover-link-text-color: var(--text-cta-hover);
+            --el-button-active-border-color: var(--stroke-border-cta-pressed);
+            --el-button-active-bg-color: transparent;
+            --el-button-active-text-color: var(--text-cta-pressed);
+            --el-button-active-color: var(--text-primary);
+            --el-button-outline-color: var(--stroke-border-cta-focused);
+	        @apply p-2 w-9 h-9 rounded-lg;
+            border: 1px solid var(--el-button-border-color);
+            color: var(--el-button-text-color);
+            .el-icon {
+                font-size: 20px;
+            }
+            &:hover {
+                border-color: var(--el-button-hover-border-color);
+                color: var(--el-button-hover-text-color);
+            }
+            &:active {
+                border-color: var(--el-button-active-border-color);
+                color: var(--el-button-active-text-color);
+            }
+            &:disabled,
+            &:disabled:hover,
+            &:disabled:not(:first-child):not(:last-child) {
+                border-color: var(--border-disabled);
+                background-color: transparent;
+                color: var(--text-cta-disabled);
+            }
+        }
+    }
+    &.is-arrow {
+        @apply px-0 py-1 relative;
+        button {
+            @apply m-0 absolute top-1;
+            &.btn-prev {
+                @apply left-0;
+            }
+            &.btn-next {
+                @apply right-0;
+            }
+        }
+        .el-pager {
+            @apply flex-auto justify-center;
+        }
+    }
+}

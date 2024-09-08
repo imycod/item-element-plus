@@ -1,0 +1,33 @@
+/* radio
+*/
+.el-radio {
+  --el-radio-text-color: var(--text-primary);
+  --el-radio-input-height: 20px;
+  --el-radio-input-width: 20px;
+  --el-radio-bg-color: var(--bg-secondary);
+  --el-radio-input-border: 2px solid var(--border-brand-primary);
+  --el-radio-input-border-color-hover: var(--border-brand-primary);
+  --el-radio-disabled-border-color: var(--border-disabled);
+  --el-radio-disabled-input-fill: var(--bg-secondary);
+  --el-radio-disabled-icon-color: var(--text-disabled);
+  --el-radio-disabled-checked-input-fill: var(--bg-disabled);
+  --el-radio-disabled-checked-input-border-color: var(--border-disabled);
+  --el-radio-checked-text-color: var(--text-primary);
+  height: 40px;
+  &__label {
+    @apply text-sm;
+  }
+  &__inner::after {
+    width: 10px;
+    height: 10px;
+    background-color: var(--bg-brand-primary);
+  }
+  &__input.is-checked .el-radio__inner {
+    background-color: var(--bg-secondary);
+  }
+}
+@media screen and (min-width: 768px) {
+  .el-radio {
+    height: 36px;
+  }
+}

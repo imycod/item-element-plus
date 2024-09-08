@@ -1,0 +1,41 @@
+/* transfer
+*/
+.el-transfer {
+    --el-transfer-border-color: var(--el-border-color);
+    --el-transfer-border-radius: 8px;
+    --el-transfer-panel-width: 256px;
+    --el-transfer-panel-header-height: auto;
+    --el-transfer-panel-header-bg-color: var(--bg-primary);
+    --el-transfer-panel-footer-height: 40px;
+    --el-transfer-panel-body-height: 278px;
+    --el-transfer-item-height: 36px;
+    --el-transfer-filter-height: 36px;
+    &-panel {
+        background-color: var(--bg-secondary);
+        .el-transfer-panel__header {
+            padding: 4px 0 4px 16px;
+        }
+        &__filter {
+            padding: 16px;
+        }
+        &__list {
+            padding-bottom: 12px;
+        }
+        &__item {
+            display: flex !important;
+            padding-left: 16px;
+            margin-right: 16px;
+            &.el-checkbox {
+                .el-checkbox__input {
+                    position: relative;
+                    top: auto;
+                }
+                .el-checkbox__label {
+                    display: inline-block;
+                    padding-left: 8px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

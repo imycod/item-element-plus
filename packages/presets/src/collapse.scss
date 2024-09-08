@@ -1,0 +1,59 @@
+/* collapse
+*/
+.el-collapse {
+  --collapse-color-bg: var(--bg-secondary);
+  --collapse-color-border: var(--border-primary);
+  @apply border-0;
+  &-item {
+    @apply rounded-lg;
+    background-color: var(--collapse-color-bg);
+    & + .el-collapse-item {
+      margin-top: 8px;
+    }
+    &__header {
+      @apply border-0 px-4 py-2.5 h-auto bg-transparent;
+      .header-title {
+        // @apply text-subheading;
+        & ~ .custom-arrow {
+          @apply ml-auto mr-0;
+        }
+      }
+      &.is-active {
+        .custom-arrow {
+          &:not(.is-active) {
+            @apply rotate-180;
+          }
+          &.is-inactive {
+            display: none;
+          }
+          &.is-active {
+            display: inline-flex;
+          }
+        }
+      }
+    }
+    &__wrap {
+      @apply p-4 pt-0 bg-transparent;
+      border-top: 0;
+      border-bottom: 0;
+    }
+    &__content {
+      @apply pb-0;
+    }
+  }
+  .custom-arrow {
+    @apply mr-3 ml-0;
+    transition: transform var(--el-transition-duration);
+    font-size: 20px;
+    & ~ .el-collapse-item__arrow {
+      display: none;
+    }
+    &.is-active {
+      display: none;
+    }
+    &.is-active,
+    &.is-inactive {
+      color: var(--text-primary);
+    }
+  }
+}

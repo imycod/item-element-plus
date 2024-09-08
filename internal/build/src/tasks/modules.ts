@@ -11,6 +11,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueMacros from 'unplugin-vue-macros/rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import Components from 'unplugin-vue-components/rollup'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
 import glob from 'fast-glob'
@@ -48,6 +50,9 @@ export const buildModules = async () => {
           }),
           vueJsx: vueJsx(),
         },
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
       }),
       nodeResolve({
         extensions: ['.mjs', '.js', '.json', '.ts'],

@@ -1,0 +1,29 @@
+/* switch
+*/
+.el-switch {
+    --el-switch-on-color: var(--bg-brand-primary);
+    --el-switch-off-color: var(--bg-tertiary);
+    @apply h-9;
+    &__core {
+        width: 52px;
+        height: 32px;
+        border-radius: 999px;
+        .el-switch__action {
+            left: 4px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+    &.is-checked {
+        .el-switch__core {
+            .el-switch__action {
+                left: calc(100% - 28px);
+            }
+        }
+    }
+    &.is-disabled {
+        --el-switch-on-color: var(--bg-disabled);
+        --el-switch-off-color: var(--bg-disabled);
+        opacity: 1;
+    }
+}

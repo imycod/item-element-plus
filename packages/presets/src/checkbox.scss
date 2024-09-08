@@ -1,0 +1,39 @@
+/* checkbox
+*/
+.el-checkbox {
+  --el-checkbox-text-color: var(--text-primary);
+  --el-checkbox-height: 40px;
+  --el-checkbox-input-height: 18px;
+  --el-checkbox-input-width: 18px;
+  --el-checkbox-border-radius: 2px;
+  --el-checkbox-bg-color: var(--bg-secondary);
+  --el-checkbox-input-border: 2px solid var(--border-brand-primary);
+  --el-checkbox-disabled-border-color: var(--border-disabled);
+  --el-checkbox-disabled-input-fill: var(--bg-secondary);
+  --el-checkbox-disabled-icon-color: var(--text-disabled);
+  --el-checkbox-disabled-checked-input-fill: var(--bg-disabled);
+  --el-checkbox-disabled-checked-input-border-color: var(--border-disabled);
+  --el-checkbox-disabled-checked-icon-color: var(--text-disabled);
+  --el-checkbox-checked-text-color: var(--text-primary);
+  --el-checkbox-checked-input-border-color: var(--border-brand-primary);
+  --el-checkbox-checked-bg-color: var(--bg-brand-primary);
+  --el-checkbox-checked-icon-color: var(--text-on-brand);
+  --el-checkbox-input-border-color-hover: var(--border-brand-primary);
+  &__label {
+    @apply text-sm;
+  }
+  &__inner::after {
+    left: 5px;
+    height: 9px;
+  }
+  &__input.is-indeterminate {
+    .el-checkbox__inner::before {
+      height: 4px;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .el-checkbox {
+    --el-checkbox-height: 36px;
+  }
+}

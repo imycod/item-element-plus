@@ -1,0 +1,47 @@
+/* badge
+*/
+.el-badge {
+  --el-badge-radius: 10px;
+  --el-badge-padding: 4px;
+  --el-badge-size: 16px;
+  &__content {
+    color: var(--text-on-brand);
+    &:not(.is-dot) {
+      @apply min-w-5 h-5;
+    }
+    &--info {
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+    }
+    &--warning {
+      color: var(--text-on-warning-secondary);
+      background-color: var(--bg-warning-secondary);
+    }
+    &--success {
+      color: var(--text-on-positive-secondary);
+      background-color: var(--bg-positive-secondary);
+    }
+    &--danger {
+      color: var(--text-on-danger-secondary);
+      background-color: var(--bg-danger-secondary);
+      &.is-dot {
+        border: 0;
+        background-color: var(--text-danger);
+      }
+    }
+  }
+
+  &.is-inline {
+    @apply inline-flex items-center;
+    .el-badge__content,
+    .el-badge__content.is-fixed {
+      @apply static transform-none ml-1;
+    }
+  }
+
+  &.is-circle {
+    .el-badge__content {
+      @apply p-0;
+    }
+  }
+}

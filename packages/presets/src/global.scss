@@ -1,0 +1,110 @@
+body {
+  @apply text-body;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* page navgation bar */
+.page-navbar {
+  @apply sticky top-0 z-10 w-full h-14 px-5 py-2;
+  border-bottom: 1px solid var(--border-primary);
+  background-image: radial-gradient(
+    var(--white-900) 1px,
+    var(--white-1000) 1px
+  );
+  background-size: 4px 4px;
+  backdrop-filter: saturate(50%) blur(4px);
+  -webkit-backdrop-filter: saturate(50%) blur(4px);
+  .el-page-header__left {
+    .el-page-header__back,
+    .el-divider--vertical {
+      @apply hidden;
+    }
+  }
+}
+.dark .page-navbar {
+  background-image: radial-gradient(
+    var(--black-900) 1px,
+    var(--black-1000) 1px
+  );
+}
+
+/* progress */
+.el-progress__text {
+  text-align: right;
+}
+.el-progress-bar__outer {
+  overflow: visible;
+  background-color: var(--bg-disabled);
+}
+.el-progress-bar__innerText {
+  margin: 0;
+  min-width: 40px;
+}
+
+/* old */
+.search-form {
+  &-content {
+    width: 100%;
+    display: flex;
+
+    > * {
+      width: 100%;
+      margin-right: 8px;
+    }
+  }
+  .el-input {
+    @apply h-[36px];
+    input {
+      @apply placeholder:text-gray-500;
+    }
+  }
+  .el-date-editor {
+    @apply h-[36px] w-full;
+  }
+  .el-button {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    path {
+      //  @apply fill-gray-300 dark:fill-white-100
+    }
+  }
+}
+
+/* 表格编辑/新增表单场景样式 */
+.table-from {
+  @apply h-full;
+  /* @apply table-button; */
+  .el-select {
+    @apply w-full;
+  }
+  .el-form--label-top {
+    .el-form-item {
+      @apply mb-6;
+      .el-form-item__label {
+        @apply mb-1 text-sm;
+      }
+    }
+  }
+}
+
+/* Custom scroll bar style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--surface-neutral-secondary-rest);
+}
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: var(--surface-neutral-secondary-rest);
+}
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar {
+  background-color: var(--surface-neutral-secondary-rest);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--surface-neutral-tertiary-rest);
+}
