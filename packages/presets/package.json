@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/index.scss -o ./dist/index.css --minify"
+    "clean": "rimraf dist",
+    "build": "gulp --require @esbuild-kit/cjs-loader"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
